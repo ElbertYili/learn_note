@@ -49,6 +49,10 @@ dependencies {
 
 - void类型函数
 
+  使用Mock。
+
+  mockIo框架
+
 
 
 ## 实施
@@ -62,4 +66,14 @@ dependencies {
 2. ![3657506268-56d8f34c260d8_articlex](/Users/elbert/Documents/personal/learn/android/Pic/3657506268-56d8f34c260d8_articlex.png)
 
    setUp/@Before：表示运行在所有单测case前的方法。可以用来初始化公共属性或其他统一操作等
+
+
+
+
+
+
+
+## 备注
+
+参考[测试的基础逻辑](http://chriszou.com/2016/04/13/android-unit-testing-start-from-what.html)
 
