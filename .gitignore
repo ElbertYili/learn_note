@@ -1,3 +1,6 @@
+# ipython checkpoint
+.ipynb_checkpoints
+
 # Built application files
 *.apk
 *.ap_
