@@ -44,7 +44,9 @@ layer {
 
 #### 2.1 Blob
 
-四维数组，float32，(n, c, h, w)，
+C风格连续存储的N维数组
+
+对于图像数据老说，是四维数组，float32，(n, c, h, w)，
 
 - n: number. 一次传播的输入数据量，比如进行sgd时候的mini-batch大小。
 - c: channel. 如果是图像数据的话可以认为是通道数量。
@@ -123,3 +125,12 @@ Net有很多函数，包括Init(), forward(), backward()等等
 #### 2.5 配置文件
 
 prototxt：solver、train_net、test_net（后两个可以用一个net的配置文件）
+
+
+
+###  caffe的预处理
+
+**工作总从从准备数据开始，准备数据，处理这些数据，之后使用各种层模块搭建网络，训练，调节**
+
+* 图片转成LMDB文件
+* 计算训练数据的均值文件
