@@ -10,7 +10,7 @@ while(True):
 
     # Our operations on the frame come here
     # gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    img = pic_handle.img_sobel(frame)
+    img = pic_handle.detectNum(frame)
 
     # Display the resulting frame
     cv2.imshow('img',img)

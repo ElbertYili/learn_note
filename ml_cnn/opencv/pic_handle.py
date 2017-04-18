@@ -28,3 +28,21 @@ def img_sobel(obj):
 
 
     return obj
+
+def detectNum(img):
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    blurred = cv2.blur(gray, (3, 3), 0)
+    (_, thresh) = cv2.threshold(blurred, 100, 255, cv2.THRESH_BINARY)
+    edged = cv2.Canny(thresh, 20, 100)
+
+    (cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2:]
+    cnts = sorted([(c, cv2.boundingRect(c)[0]) for c in cnts], key = lambda x: x[1])
+
+    # loop over the contours
+    for (c, _) in cnts:
+    	# compute the bounding box for the rectangle
+        (x, y, w, h) = cv2.boundingRect(c)
+        if (h > 25):
+            cv2.rectangle(img, (x, y), (x + w, y + h), (255, 155, 100), 2)
+
+    return img
